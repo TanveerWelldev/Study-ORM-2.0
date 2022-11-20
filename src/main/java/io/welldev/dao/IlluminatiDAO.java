@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IlluminatiDAO {
 
-    public void createIlluminati(Illuminati illuminati);
+    public void insertIlluminati(Illuminati illuminati);
 
     public List<Illuminati> listIlluminati();
 }

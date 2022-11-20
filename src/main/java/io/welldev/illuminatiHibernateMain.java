@@ -13,13 +13,13 @@ public class illuminatiHibernateMain {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         Illuminati illuminati = new Illuminati();
-        illuminati.setName("Bill Gates 2");
+        illuminati.setName("Bill Gates 8");
         illuminati.setCountry("USA");
         illuminati.setDesignation("33 Degrees");
         illuminati.setBalance(200000000);
 
         IlluminatiDAO illuminatiDAO = (IlluminatiDAO) context.getBean("illuminatiDAO");
-        illuminatiDAO.createIlluminati(illuminati);
+        illuminatiDAO.insertIlluminati(illuminati);
         System.out.println(illuminati.getName()+ " has joined US!! ");
 
         List<Illuminati> list = illuminatiDAO.listIlluminati();

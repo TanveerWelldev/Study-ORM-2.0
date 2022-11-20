@@ -16,7 +16,7 @@ public class IlluminatiDAOImpl implements IlluminatiDAO{
     }
 
     @Override
-    public void createIlluminati(Illuminati illuminati) {
+    public void insertIlluminati(Illuminati illuminati) {
         Session session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.persist(illuminati);

@@ -9,8 +9,7 @@ public class Illuminati {
 
     @Id
     @Column(name="id")
-    @SequenceGenerator(name="seq", sequenceName = "illuminati_id_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String country;
