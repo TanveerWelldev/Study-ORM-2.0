@@ -3,23 +3,25 @@ package io.welldev.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Person")
+
+@Table(name = "illuminati")
 public class Illuminati {
 
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @SequenceGenerator(name="seq", sequenceName = "illuminati_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    private Integer id;
     private String name;
     private String country;
     private String Designation;
     private int balance;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
