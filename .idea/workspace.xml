@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b866f365-ed50-43d9-a63d-080a67ce0b8a" name="Changes" comment="&quot;Test branch initiated&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/config/JPAConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/ActorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/DirectorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/GenreDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/MovieDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/model/Actor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/model/Director.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/model/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/model/Movie.java" afterDir="false" />
+    <list default="true" id="b866f365-ed50-43d9-a63d-080a67ce0b8a" name="Changes" comment="&quot;Association intiall commit&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/dao/IlluminatiDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/dao/IlluminatiDAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/illuminatiHibernateMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/illuminatiHibernateMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/model/Illuminati.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/config/JPAConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/config/JPAConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/dao/ActorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/ActorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/dao/DirectorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/DirectorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/dao/GenreDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/GenreDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/dao/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/dao/MovieDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +48,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
