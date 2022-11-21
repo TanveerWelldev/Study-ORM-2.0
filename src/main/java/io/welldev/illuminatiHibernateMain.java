@@ -1,33 +1,65 @@
 package io.welldev;
 
-import io.welldev.dao.IlluminatiDAO;
-import io.welldev.model.Illuminati;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import io.welldev.dao.ActorDAO;
 
+import io.welldev.dao.DirectorDAO;
+import io.welldev.dao.GenreDAO;
+import io.welldev.dao.MovieDAO;
+import io.welldev.model.Actor;
+import io.welldev.model.Director;
+import io.welldev.model.Genre;
+import io.welldev.model.Movie;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+
+import javax.persistence.EntityManager;
+import java.sql.Date;
 import java.util.List;
 
 public class illuminatiHibernateMain {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("io.welldev.config");
 
-        Illuminati illuminati = new Illuminati();
-        illuminati.setName("Bill Gates 8");
-        illuminati.setCountry("USA");
-        illuminati.setDesignation("33 Degrees");
-        illuminati.setBalance(200000000);
+        Actor actor1 = new Actor();
+        actor1.setName("Ryan Gosling");
 
-        IlluminatiDAO illuminatiDAO = (IlluminatiDAO) context.getBean("illuminatiDAO");
-        illuminatiDAO.insertIlluminati(illuminati);
-        System.out.println(illuminati.getName()+ " has joined US!! ");
+        Director director1 = new Director();
+        director1.setName("Nicolas Winding Refn");
 
-        List<Illuminati> list = illuminatiDAO.listIlluminati();
-        System.out.println("All Illuminatis : ");
+        Genre genre1 = new Genre();
+        genre1.setName("Action");
 
-        for (Illuminati illuminati1:
-             list) {
-            System.out.println(illuminati1.getName());
-        }
+        Genre genre2 = new Genre();
+        genre2.setName("Drama");
+
+        Movie movie1 = new Movie();
+        movie1.setTitle("Drive");
+        movie1.setYear(2011);
+        movie1.getActors().add(actor1);
+        movie1.setDirector(director1);
+        movie1.getGenres().add(genre1);
+        movie1.getGenres().add(genre2);
+        movie1.setRating("M");
+
+        ActorDAO actorDao = context.getBean(ActorDAO.class);
+        actorDao.add(actor1);
+
+        DirectorDAO directorDAO = context.getBean(DirectorDAO.class);
+        directorDAO.add(director1);
+
+        GenreDAO genreDAO = context.getBean(GenreDAO.class);
+        genreDAO.add(genre1);
+        genreDAO.add(genre2);
+
+        MovieDAO movieDAO = context.getBean(MovieDAO.class);
+        movieDAO.add(movie1);
+
+
+
+
+
     }
 }
