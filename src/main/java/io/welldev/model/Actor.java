@@ -13,6 +13,15 @@ public class Actor {
     @ManyToMany(mappedBy = "actors")
     private Set<Movie> movies = new HashSet<Movie>();
 
+    public Actor(String name) {
+        this.name = name;
+        this.movies = movies;
+    }
+
+    public Actor() {
+
+    }
+
     public Long getId() {
         return id;
     }

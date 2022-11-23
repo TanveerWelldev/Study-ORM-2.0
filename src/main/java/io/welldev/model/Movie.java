@@ -1,9 +1,9 @@
 package io.welldev.model;
 
-import org.hibernate.annotations.ManyToAny;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,8 +15,9 @@ public class Movie {
     private String title;
     @ManyToMany
     @JoinTable(name = "movie_genre",
-            joinColumns = { @JoinColumn(name = "fk_movie") },
-            inverseJoinColumns = { @JoinColumn(name = "fk_genre") })
+            joinColumns = {@JoinColumn(name = "fk_movie")},
+            inverseJoinColumns = {@JoinColumn(name = "fk_genre")})
+    @Fetch(value = FetchMode.JOIN)
     private Set<Genre> genres = new HashSet<Genre>();
     private String rating;
     @ManyToOne
@@ -25,11 +26,24 @@ public class Movie {
 
     @ManyToMany
     @JoinTable(name = "movie_actors",
-            joinColumns = { @JoinColumn(name = "fk_movie") },
-            inverseJoinColumns = { @JoinColumn(name = "fk_actor") })
+            joinColumns = {@JoinColumn(name = "fk_movie")},
+            inverseJoinColumns = {@JoinColumn(name = "fk_actor")})
+    @Fetch(value = FetchMode.JOIN)
     private Set<Actor> actors = new HashSet<Actor>();
 
     private int year;
+
+    public Movie() {
+    }
+
+    public Movie(String title, Set<Genre> genres, String rating, Director director, Set<Actor> actors, int year) {
+        this.title = title;
+        this.genres = genres;
+        this.rating = rating;
+        this.director = director;
+        this.actors = actors;
+        this.year = year;
+    }
 
     public Long getId() {
         return id;

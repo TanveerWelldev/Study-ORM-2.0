@@ -12,6 +12,13 @@ public class Director {
     private Long id;
     private String name;
 
+    public Director() {
+    }
+
+    public Director(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }

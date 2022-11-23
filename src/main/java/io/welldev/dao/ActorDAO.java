@@ -28,8 +28,9 @@ public class ActorDAO {
         return entityManager.find(Actor.class, id);
     }
 
-    public void delete(Actor actor) {
-        entityManager.remove(actor);
+    public void delete(Long id) {
+        Actor actor = entityManager.find(Actor.class, id);
+        entityManager.remove(entityManager.find(Actor.class, id));
     }
 
     public List<Actor> getAll() {

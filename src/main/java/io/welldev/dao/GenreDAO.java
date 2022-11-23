@@ -24,8 +24,8 @@ public class GenreDAO {
         return entityManager.find(Genre.class, id);
     }
 
-    public void delete(Genre genre) {
-        entityManager.remove(genre);
+    public void delete(Long id) {
+        entityManager.remove(entityManager.find(Genre.class, id));
     }
 
     public List<Genre> getAll() {

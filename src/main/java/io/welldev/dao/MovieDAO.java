@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -26,12 +27,12 @@ public class MovieDAO {
         return movie;
     }
 
-    public void delete(Movie movie) {
-        entityManager.remove(movie);
+    public void delete(Long id) {
+        entityManager.remove(entityManager.find(Movie.class, id));
     }
 
     public List<Movie> getAll() {
-        List<Movie> movies = entityManager.createQuery("from Movie").getResultList();
+        List<Movie> movies = entityManager.createQuery("FROM Movie").getResultList();
 
         return movies;
     }

@@ -28,8 +28,8 @@ public class DirectorDAO {
         return entityManager.find(Director.class, id);
     }
 
-    public void delete(Director director) {
-        entityManager.remove(director);
+    public void delete(Long id) {
+        entityManager.remove(entityManager.find(Director.class, id));
     }
 
     public List<Director> getAll() {
