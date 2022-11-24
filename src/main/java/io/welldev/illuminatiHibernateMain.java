@@ -1,10 +1,7 @@
 package io.welldev;
 
-import io.welldev.dao.ActorDAO;
+import io.welldev.dao.*;
 
-import io.welldev.dao.DirectorDAO;
-import io.welldev.dao.GenreDAO;
-import io.welldev.dao.MovieDAO;
 import io.welldev.model.Actor;
 import io.welldev.model.Director;
 import io.welldev.model.Genre;
@@ -21,13 +18,22 @@ public class illuminatiHibernateMain {
 
         ActorDAO actorDAO = context.getBean(ActorDAO.class);
         DirectorDAO directorDAO = context.getBean(DirectorDAO.class);
+        ExtendedDirectorDAO extendedDirectorDAO = context.getBean(ExtendedDirectorDAO.class);
         GenreDAO genreDAO = context.getBean(GenreDAO.class);
         MovieDAO movieDAO = context.getBean(MovieDAO.class);
 
-//        Movie movie = new Movie("Atomic Blonde", new HashSet<>()
-//                .addAll(Arrays.asList(
-//                        new Genre("")
-//                )))
+        Actor actor = new Actor("Brad Pitt");
+        Actor actor1 = new Actor("Morgan Freeman");
+        Actor actor2 = new Actor("Kevin Spacey");
+        Actor actor3 = new Actor("Gwyneth Paltrow");
+
+        Movie movie = new Movie("Se7en", new HashSet<>().addAll(Arrays.asList(new Genre("Crime"), new Genre("Mystery")))
+
+        ))
+
+
+
+
 
 
 
