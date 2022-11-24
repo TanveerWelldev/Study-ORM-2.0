@@ -1,6 +1,7 @@
 package io.welldev.dao;
 
 import io.welldev.model.Actor;
+import io.welldev.model.Genre;
 import io.welldev.model.Movie;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,13 @@ public class ActorDAO {
 
     public void add(Actor actor) {
         entityManager.persist(actor);
+    }
+
+    public void addAll(List<Actor> actorList) {
+        for (Actor a:
+                actorList) {
+            entityManager.persist(a);
+        }
     }
 
     public Actor get(Long id) {

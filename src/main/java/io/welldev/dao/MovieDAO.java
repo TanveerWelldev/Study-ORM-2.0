@@ -21,6 +21,13 @@ public class MovieDAO {
         entityManager.persist(movie);
     }
 
+    public void addAll(List<Movie> movieList) {
+        for (Movie m:
+             movieList) {
+            entityManager.persist(m);
+        }
+    }
+
     public Movie get(Long id) {
         Movie movie = entityManager.find(Movie.class, id);
 

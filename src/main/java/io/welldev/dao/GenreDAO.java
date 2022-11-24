@@ -1,6 +1,7 @@
 package io.welldev.dao;
 
 import io.welldev.model.Genre;
+import io.welldev.model.Movie;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +19,13 @@ public class GenreDAO {
 
     public void add(Genre genre) {
         entityManager.persist(genre);
+    }
+
+    public void addAll(List<Genre> genreList) {
+        for (Genre g:
+                genreList) {
+            entityManager.persist(g);
+        }
     }
 
     public Genre get(Long id) {

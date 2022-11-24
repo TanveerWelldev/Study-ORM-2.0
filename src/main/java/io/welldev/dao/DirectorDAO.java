@@ -2,6 +2,7 @@ package io.welldev.dao;
 
 import io.welldev.model.Actor;
 import io.welldev.model.Director;
+import io.welldev.model.Genre;
 import io.welldev.model.Movie;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -19,8 +20,16 @@ public class DirectorDAO {
     private EntityManager entityManager;
 
 
+
     public void add(Director director) {
         entityManager.persist(director);
+    }
+
+    public void addAll(List<Director> directorList) {
+        for (Director d:
+                directorList) {
+            entityManager.persist(d);
+        }
     }
 
     public void addWithoutTransaction(Director director) {

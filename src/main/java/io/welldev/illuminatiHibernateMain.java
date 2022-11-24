@@ -10,6 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 public class illuminatiHibernateMain {
 
@@ -22,14 +23,30 @@ public class illuminatiHibernateMain {
         GenreDAO genreDAO = context.getBean(GenreDAO.class);
         MovieDAO movieDAO = context.getBean(MovieDAO.class);
 
-        Actor actor = new Actor("Brad Pitt");
-        Actor actor1 = new Actor("Morgan Freeman");
-        Actor actor2 = new Actor("Kevin Spacey");
-        Actor actor3 = new Actor("Gwyneth Paltrow");
 
-        Movie movie = new Movie("Se7en", new HashSet<>().addAll(Arrays.asList(new Genre("Crime"), new Genre("Mystery")))
 
-        ))
+        List<Genre> genreList = Arrays.asList(
+                new Genre("Crime"),
+                new Genre("Mystery")
+        );
+        List<Actor> actorList = Arrays.asList(
+                new Actor("Brad Pitt"),
+                new Actor("Morgan Freeman"),
+                new Actor("Kevin Spacey"),
+                new Actor("Gwyneth Paltrow")
+        );
+
+        actorDAO.addAll(actorList);
+
+        genreDAO.addAll(genreList);
+        Director director = new Director("David Fincher");
+
+        directorDAO.add(director);
+
+        Movie movie = new Movie("Se7en", new HashSet<Genre>(genreList),
+                "R", director, new HashSet<Actor>(actorList), 1995);
+
+        movieDAO.add(movie);
 
 
 
